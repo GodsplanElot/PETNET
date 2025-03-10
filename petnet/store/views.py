@@ -9,7 +9,7 @@ def category_detail(request, slug):
         'catergory': category
     })
 
-def product_detail(request, slug):
+def product_detail(request, category_slug, slug):
     product = get_object_or_404(Product, slug=slug)
 
     return render(request, 'store/product_detail.html', {
