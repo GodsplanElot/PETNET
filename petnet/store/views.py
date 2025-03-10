@@ -3,5 +3,8 @@ from .models import Product
 
 # Create your views here.
 def product_detail(request, slug):
-    print('Slug:', slug)
-    return render(request, 'store/product_detail.html')
+    product = Product.objects.get(slug=slug)
+
+    return render(request, 'store/product_detail.html', {
+        'product': product
+    })
