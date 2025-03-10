@@ -19,8 +19,11 @@ class Product(models.Model):
     slug = models.SlugField(max_length=50)
     descript = models.TextField(blank=True)
     price = models.IntegerField()
-    created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-created_at',)
 
     def __str__(self):
         return self.title
