@@ -6,7 +6,7 @@ def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
 
     return render(request, 'store/category_detail.html', {
-        'catergory': category
+        'category': category
     })
 
 def product_detail(request, category_slug, slug):
